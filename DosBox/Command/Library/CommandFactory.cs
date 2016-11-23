@@ -28,11 +28,11 @@ namespace DosBox.Command.Library
                                new CmdMkDir("md", drive),
                                new CmdMkFile("mf", drive),
                                new CmdMkFile("mkfile", drive),
-                               new CmdHelp("help", drive),
-                               new CmdExit("exit", drive)
 
                                // Add your commands here
-
+                               new CmdHelp("help", drive),
+                               new CmdExit("exit", drive),
+                               new CmdTime("time", drive)
                            };
         }
 

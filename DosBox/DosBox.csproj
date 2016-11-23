@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Command\Library\CmdHelp.cs" />
     <Compile Include="Command\Library\CmdExit.cs" />
+    <Compile Include="Command\Library\CmdTime.cs" />
     <Compile Include="Interfaces\IDrive.cs" />
     <Compile Include="Interfaces\IExecuteCommand.cs" />
     <Compile Include="Program.cs" />
