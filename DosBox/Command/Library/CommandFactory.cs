@@ -28,10 +28,10 @@ namespace DosBox.Command.Library
                                new CmdMkDir("md", drive),
                                new CmdMkFile("mf", drive),
                                new CmdMkFile("mkfile", drive),
-                               new CmdHelp("help", drive),
+                               new CmdHelp("help", drive)
 
                                // Add your commands here
-                               new CmdTime("time", drive)
+
                            };
         }
 
