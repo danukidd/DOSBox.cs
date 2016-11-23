@@ -18,8 +18,23 @@ namespace DosBox.Command.Library
         public override void Execute(IOutputter outputter)
         {
             string fileName = GetParameterAt(0);
-            string fileContent = GetParameterAt(1);
-            File newFile = new File(fileName, fileContent);
+            File newFile = null;
+
+            if (GetParameterCount() > 1)// GetParameterAt(1) != null)
+            {
+                string fileContent = GetParameterAt(1);
+                newFile = new File(fileName, fileContent);
+            }
+            else
+            {
+                newFile = new File(fileName, "");
+            }
+
+            FileSystemItem tempo = this.Drive.GetItemFromPath(this.Drive.CurrentDirectory.Path + "\\" + fileName);
+            if (tempo != null)
+                this.Drive.CurrentDirectory.Remove(tempo);
+
+
             this.Drive.CurrentDirectory.Add(newFile);
         }
     }
