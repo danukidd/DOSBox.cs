@@ -22,10 +22,10 @@ namespace DosBox.Command.Library
                 //outputter.PrintLine("EXIT");
                 System.Environment.Exit(0);
             }
-
-            else if (GetParameterCount() == 1 &&
-                GetParameterAt(0).ToUpper() == "GUGUS")
+            else if (GetParameterCount() == 1 && GetParameterAt(0).ToUpper() == "GUGUS")
+            {
                 System.Environment.Exit(0);
+            }
         }
     }
 }
