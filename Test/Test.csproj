@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\Framework\OutputterTest.cs" />
-    <Compile Include="Command\Library\CmdExitTest.cs" />
+    <Compile Include="Command\Library\CmdExitTest2.cs" />
     <Compile Include="Command\Library\CmdTimeTest.cs" />
     <Compile Include="Command\Library\CmdHelpTest.cs" />
     <Compile Include="Helpers\Path.cs" />
