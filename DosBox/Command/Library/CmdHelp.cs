@@ -41,10 +41,10 @@ namespace DosBox.Command.Library
             if (GetParameterCount() == 0)
             {
 
-                outputter.PrintLine("All available commands are listed on te sceen as follows : ");
+                outputter.PrintLine("All available commands are listed on te sceen as follows : \n");
                 foreach (KeyValuePair<string, string> entry in dictHelp)
                 {
-                    outputter.PrintLine(entry.Key.ToUpper() + " " + entry.Value);
+                    outputter.PrintLine(entry.Key.ToUpper() + "\t" + entry.Value);
                 }
 
             }
@@ -55,7 +55,7 @@ namespace DosBox.Command.Library
                 bool hasValue = dictHelp.TryGetValue(commandName, out commandDesc);
                 if (hasValue)
                 {
-                    outputter.PrintLine(commandName.ToUpper() + " " + commandDesc);
+                    outputter.PrintLine(commandName.ToUpper() + "\t" + commandDesc);
                 }
                 else
                 {
