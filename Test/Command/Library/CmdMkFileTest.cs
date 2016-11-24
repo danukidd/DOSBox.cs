@@ -77,5 +77,14 @@ namespace DosBoxTest.Command.Library
             Assert.AreEqual(numbersOfFilesBeforeTest, drive.CurrentDirectory.GetNumberOfContainedFiles());
             TestHelper.AssertContains("syntax of the command is incorrect", testOutput.ToString());
         }
+
+        [TestMethod]
+        public void CmdMkFile_AlreadyExist()
+        {
+            ExecuteCommand("mkfile te");
+            ExecuteCommand("mkfile te");
+            Assert.AreEqual(numbersOfFilesBeforeTest+1, drive.CurrentDirectory.GetNumberOfContainedFiles());
+            TestHelper.AssertContains("file already exists", testOutput.ToString());
+        }
     }
 }

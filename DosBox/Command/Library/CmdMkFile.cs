@@ -36,10 +36,16 @@ namespace DosBox.Command.Library
 
                 FileSystemItem tempo = this.Drive.GetItemFromPath(this.Drive.CurrentDirectory.Path + "\\" + fileName);
                 if (tempo != null)
-                    this.Drive.CurrentDirectory.Remove(tempo);
+                {
+                    //this.Drive.CurrentDirectory.Remove(tempo);
+                    outputter.PrintLine("file already exists");
+                }
+                else
+                {
+                    this.Drive.CurrentDirectory.Add(newFile);
+                }
 
-
-                this.Drive.CurrentDirectory.Add(newFile);
+                   
             }
         }
     }
