@@ -17,25 +17,30 @@ namespace DosBox.Command.Library
 
         public override void Execute(IOutputter outputter)
         {
-            string fileName = GetParameterAt(0);
-            File newFile = null;
-
-            if (GetParameterCount() > 1)// GetParameterAt(1) != null)
-            {
-                string fileContent = GetParameterAt(1);
-                newFile = new File(fileName, fileContent);
-            }
+            if (GetParameterCount() == 0)
+                outputter.PrintLine("syntax of the command is incorrect");
             else
             {
-                newFile = new File(fileName, "");
+                string fileName = GetParameterAt(0);
+                File newFile = null;
+
+                if (GetParameterCount() > 1)// GetParameterAt(1) != null)
+                {
+                    string fileContent = GetParameterAt(1);
+                    newFile = new File(fileName, fileContent);
+                }
+                else
+                {
+                    newFile = new File(fileName, "");
+                }
+
+                FileSystemItem tempo = this.Drive.GetItemFromPath(this.Drive.CurrentDirectory.Path + "\\" + fileName);
+                if (tempo != null)
+                    this.Drive.CurrentDirectory.Remove(tempo);
+
+
+                this.Drive.CurrentDirectory.Add(newFile);
             }
-
-            FileSystemItem tempo = this.Drive.GetItemFromPath(this.Drive.CurrentDirectory.Path + "\\" + fileName);
-            if (tempo != null)
-                this.Drive.CurrentDirectory.Remove(tempo);
-
-
-            this.Drive.CurrentDirectory.Add(newFile);
         }
     }
 }
