@@ -32,7 +32,8 @@ namespace DosBox.Command.Library
                                // Add your commands here
                                new CmdHelp("help", drive),
                                new CmdExit("exit", drive),
-                               new CmdTime("time", drive)
+                               new CmdTime("time", drive),
+                               new CmdVer("ver", drive)
                            };
         }
 
