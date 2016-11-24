@@ -2,6 +2,7 @@
 // Authors: Rainer Grau, Daniel Tobler, Zühlke Technology Group
 // Copyright (c) 2012 All Right Reserved
 
+using System;
 using DosBox.Filesystem;
 using DosBox.Interfaces;
 using DosBoxTest.Command.Framework;
@@ -33,6 +34,11 @@ namespace DosBoxTest.Helpers
             Assert.AreEqual(directoryName, fileSystemItem.Name);
             Assert.IsTrue(fileSystemItem.IsDirectory());
             return (Directory) fileSystemItem;
+        }
+
+        internal static void AssertContains(string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
         }
 
         public static void AssertContains(string expectedToContain, string actualShouldContain)
