@@ -59,7 +59,7 @@ namespace DosBox.Command.Library
                 }
                 else
                 {
-                    outputter.PrintLine("Error : This command is not supported by the help utility.");
+                    outputter.Print("Error : This command is not supported by the help utility.");
                 }
 
                
