@@ -49,14 +49,22 @@ namespace DosBox.Command.Library
         {
             for(int i=0 ; i<GetParameterCount() ; i++)
             {
-                CreateDirectory(GetParameterAt(i), this.Drive);
+                CreateDirectory(GetParameterAt(i), this.Drive, outputter);
             }
         }
 
-        private static void CreateDirectory(string newDirectoryName, IDrive drive)
+        private static void CreateDirectory(string newDirectoryName, IDrive drive, IOutputter outputter)
         {
             Directory newDirectory = new Directory(newDirectoryName);
-            drive.CurrentDirectory.Add(newDirectory);
+
+            FileSystemItem tempo = drive.GetItemFromPath(drive.CurrentDirectory.Path + "\\" + newDirectoryName);
+
+            if (tempo == null)
+                drive.CurrentDirectory.Add(newDirectory);
+            else if (tempo.IsDirectory())
+                outputter.PrintLine("folder "+newDirectoryName+" already exists (skipped)");
+            else
+                drive.CurrentDirectory.Add(newDirectory);
         }
     }
 }
