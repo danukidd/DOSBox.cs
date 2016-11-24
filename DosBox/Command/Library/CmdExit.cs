@@ -19,7 +19,7 @@ namespace DosBox.Command.Library
         {
             if (GetParameterCount() == 0)
             {
-                outputter.PrintLine("EXIT");
+                //outputter.PrintLine("EXIT");
                 System.Environment.Exit(0);
             }
 
