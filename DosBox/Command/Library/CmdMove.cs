@@ -32,8 +32,8 @@ namespace DosBox.Command.Library
                  
 
 
-                    IsFileExist(Drive.CurrentDirectory.Name + "\\" + fileName, out currentFile);
-                    IsDirectoryExist(Drive.CurrentDirectory.Name + "\\" + fileName, out currentDir);
+                    IsFileExist(Drive.CurrentDirectory.Path + "\\" + fileName, out currentFile);
+                    IsDirectoryExist(Drive.CurrentDirectory.Path + "\\" + fileName, out currentDir);
 
                     if (currentFile != null)
                         moveFile(currentFile, destinationName);
