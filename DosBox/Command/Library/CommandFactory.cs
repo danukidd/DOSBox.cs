@@ -33,7 +33,9 @@ namespace DosBox.Command.Library
                                new CmdHelp("help", drive),
                                new CmdExit("exit", drive),
                                new CmdTime("time", drive),
-                               new CmdVer("ver", drive)
+                               new CmdVer("ver", drive),
+                               new CmdMove("move", drive),
+                               new CmdCopy("copy", drive)
                            };
         }
 

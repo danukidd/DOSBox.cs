@@ -2,6 +2,7 @@
 // Authors: Rainer Grau, Daniel Tobler, Zühlke Technology Group
 // Copyright (c) 2012 All Right Reserved
 
+using System.Diagnostics;
 using DosBox.Command.Library;
 using DosBox.Filesystem;
 using DosBoxTest.Helpers;
@@ -20,7 +21,7 @@ namespace DosBoxTest.Command.Library
 
             // Add all commands which are necessary to execute this unit test
             // Important: Other commands are not available unless added here.
-            commandInvoker.AddCommand(new CmdCd("exit", drive));
+            commandInvoker.AddCommand(new CmdExit("exit", drive));
         }
 
         //[TestMethod]
@@ -44,5 +45,7 @@ namespace DosBoxTest.Command.Library
             
             TestHelper.AssertContains("'exit1' is not recognized", testOutput.ToString());
         }
+
+        
     }
 }

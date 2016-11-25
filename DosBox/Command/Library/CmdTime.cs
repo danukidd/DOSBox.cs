@@ -27,12 +27,12 @@ namespace DosBox.Command.Library
             return numberOfParameters == 0 || numberOfParameters == 1;
         }
 
-        protected override bool CheckParameterValues(IOutputter outputter)
-        {
-            if (GetParameterCount() == 0 || GetParameterCount() == 1 && param.Contains(GetParameterAt(0).ToLower()))
-                return true;
-            return false;
-        }
+        //protected override bool CheckParameterValues(IOutputter outputter)
+        //{
+        //    if (GetParameterCount() == 0 || GetParameterCount() == 1 && param.Contains(GetParameterAt(0).ToLower()))
+        //        return true;
+        //    return false;
+        //}
 
         public override void Execute(IOutputter outputter)
         {
