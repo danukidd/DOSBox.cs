@@ -36,6 +36,25 @@ namespace DosBoxTest.Command.Library
         }
 
         [TestMethod]
+        public void CmdMkDir_CreateNewDirectory_NewDirectoryIsExist()
+        {
+            // given
+            const string testDirName1 = "test1";
+            const string testDirName2 = "test1";
+            
+            // when
+            ExecuteCommand("mkdir " + testDirName1 + " " + testDirName2);
+
+            // then
+            Directory directory1 = TestHelper.GetDirectory(drive, Path.Combine(drive.DriveLetter, testDirName1),
+                                                           testDirName1);
+            TestHelper.AssertContains("folder " + testDirName2 + " already exists (skipped)", this.testOutput);
+
+        }
+
+        
+
+        [TestMethod]
         public void CmdMkDir_CreateNewDirectory_NewDirectoryIsAddedToCorrectLocation()
         {
             const string testDirName = "test1";
