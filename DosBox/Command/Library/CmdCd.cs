@@ -57,11 +57,12 @@ namespace DosBox.Command.Library
 
         private static void ChangeCurrentDirectory(Directory destinationDirectory, IDrive drive, IOutputter outputter)
         {
-            if (!drive.ChangeCurrentDirectory(destinationDirectory))
+            bool success = drive.ChangeCurrentDirectory(destinationDirectory);
+            if (!success)
             {
                 outputter.PrintLine(SYSTEM_CANNOT_FIND_THE_PATH_SPECIFIED);
             }
-           
+
         }
 
         private static void PrintCurrentDirectoryPath(string currentDirectoryName, IOutputter outputter)

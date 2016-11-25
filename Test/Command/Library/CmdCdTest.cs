@@ -24,6 +24,13 @@ namespace DosBoxTest.Command.Library
         }
 
         [TestMethod]
+        public void CmdCd_ChangeToUnknownDirectory_ChangesDirectory()
+        {
+            ExecuteCommand("cd aaaaa" );
+            TestHelper.AssertContains("The system cannot find the path specified.", testOutput.ToString());
+        }
+
+        [TestMethod]
         public void CmdCd_ChangeToSubdirectory_ChangesDirectory()
         {
             ExecuteCommand("cd " + subDir1.Path);
