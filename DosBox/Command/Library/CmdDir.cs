@@ -69,6 +69,7 @@ namespace DosBox.Command.Library
         {
             foreach (FileSystemItem item in directoryContent)
             {
+                outputter.Print(item.Time.ToString("dd/MM/yyyy HH:mm tt")+ "\t");
                 if (item.IsDirectory())
                 {
                     outputter.Print("<DIR>");
@@ -85,8 +86,7 @@ namespace DosBox.Command.Library
 
         private static void PrintFooter(Directory directoryToPrint, IOutputter outputter)
         {
-            outputter.PrintLine("\t" + directoryToPrint.GetNumberOfContainedFiles() + " File(s)");
-            outputter.PrintLine("\t" + directoryToPrint.GetNumberOfContainedDirectories() + " Dir(s)");
+            
         }
     }
 }

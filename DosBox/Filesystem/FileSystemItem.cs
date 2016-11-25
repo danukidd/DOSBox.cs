@@ -29,6 +29,7 @@ namespace DosBox.Filesystem
     {
         private const string ILLEGAL_ARGUMENT_TEXT = "Error: A file or directory name may not contain '/', '\', ',', ' ' or ':'";
         private string itemName;
+        private DateTime itemDate;
         private Directory parent;
 
         protected FileSystemItem(string itemName, Directory parent)
@@ -39,6 +40,7 @@ namespace DosBox.Filesystem
             }
             this.itemName = itemName;
             this.parent = parent;
+            this.itemDate = DateTime.Now;
         }
 
         /// <summary>
@@ -59,6 +61,17 @@ namespace DosBox.Filesystem
                 }
 
                 itemName = value;
+            }
+        }
+
+        public DateTime Time
+        {
+            get { return itemDate; }
+
+            set
+            {
+                
+                itemDate = value;
             }
         }
 

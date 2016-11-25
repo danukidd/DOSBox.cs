@@ -63,8 +63,8 @@ namespace DosBox.Command.Library
                 drive.CurrentDirectory.Add(newDirectory);
             else if (tempo.IsDirectory())
                 outputter.PrintLine("folder "+newDirectoryName+" already exists (skipped)");
-            else
-                drive.CurrentDirectory.Add(newDirectory);
+            //else
+            //    drive.CurrentDirectory.Add(newDirectory);
         }
     }
 }
