@@ -62,6 +62,7 @@ namespace DosBox.Command.Library
             {
                 outputter.PrintLine(SYSTEM_CANNOT_FIND_THE_PATH_SPECIFIED);
             }
+
         }
 
         private static void PrintCurrentDirectoryPath(string currentDirectoryName, IOutputter outputter)
